@@ -36,15 +36,6 @@ describe('UserServicePact', () => {
     });
   });
 
-  afterAll(function (done) {
-    provider.finalize()
-      .then(function () {
-        done();
-      }, function (err) {
-        done.fail(err);
-      });
-  });
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -81,7 +72,7 @@ describe('UserServicePact', () => {
         uponReceiving: 'a request to POST a person',
         withRequest: {
           method: 'POST',
-          path: '/user-service/users',
+          path: '/api/users',
           body: expectedUser,
           headers: {
             'Content-Type': 'application/json'
@@ -121,7 +112,7 @@ describe('UserServicePact', () => {
         uponReceiving: 'a request to PUT a person',
         withRequest: {
           method: 'PUT',
-          path: '/user-service/users/42',
+          path: '/api/users/42',
           headers: {'Content-Type': 'application/json'},
           body: Matchers.somethingLike(expectedUser)
         },

@@ -41,7 +41,7 @@ module.exports = function (config) {
       }
     ],
     proxies: {
-      '/user-service/users': 'http://localhost:1234/user-service/users'
+      '/api': 'http://localhost:1234/api'
     }
   });
 };
