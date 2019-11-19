@@ -1,0 +1,27 @@
+### Maven
+target/
+
+### JetBrains
+.idea
+
+# compiled output
+/dist
+/tmp
+/.tmp
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+
+*.iml
