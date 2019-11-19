@@ -1,27 +1,22 @@
 ### Maven
 target/
 
-### JetBrains
-.idea
-
-# compiled output
+### Angular CLI
 /dist
 /tmp
 /.tmp
-
-# dependencies
 /node_modules
 
-# IDEs and editors
+### IDEs and editors
 /.idea
+*.iml
 .project
 .classpath
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
-
-# IDE - VSCode
 .vscode/*
 
-*.iml
+### Test
+logs
