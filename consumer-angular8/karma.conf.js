@@ -37,7 +37,7 @@ module.exports = function (config) {
         spec: 3,
         port: 1234,
         log: path.resolve(process.cwd(), 'logs', 'mockserver-integration.log'),
-        dir: path.resolve(process.cwd(), 'pacts')
+        dir: path.resolve(process.cwd(), '../pacts')
       }
     ],
     proxies: {
