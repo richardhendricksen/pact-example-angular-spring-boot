@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>nl.codecontrol.pact</groupId>
-	<artifactId>spring-boot-provider</artifactId>
+	<artifactId>provider-spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-provider</name>
+	<name>provider-spring-boot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -74,6 +74,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+        <testResources>
+            <testResource>
+                <directory>../</directory>
+                <includes>
+                    <include>pacts/*.json</include>
+                </includes>
+            </testResource>
+        </testResources>
 	</build>
 
 </project>
