@@ -1,4 +1,4 @@
-package nl.codecontrol.pact.springbootprovider;
+package nl.codecontrol.pact;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

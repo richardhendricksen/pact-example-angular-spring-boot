@@ -1,10 +1,9 @@
-package nl.codecontrol.pact.springbootprovider;
+package nl.codecontrol.pact;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -18,6 +17,7 @@ public class UserController {
     {
         counter.set(1L);
         currentUsers.put(1L, new User(1, "MrFirst", "Tester"));
+        currentUsers.put(42L, new User(42, "MrsSecond", "Developer"));
     }
 
     @GetMapping("/api/users/{id}")
@@ -26,15 +26,15 @@ public class UserController {
     }
 
     @PostMapping("/api/users")
-    public Long createUser(@RequestBody User receivedUser) {
-        User newUser = new User(counter.incrementAndGet(), receivedUser.getFirstname(), receivedUser.getLastname());
+    @ResponseStatus(HttpStatus.CREATED)
+    public User createUser(@RequestBody User receivedUser) {
+        User newUser = new User(counter.incrementAndGet(), receivedUser.getFirstName(), receivedUser.getLastName());
         currentUsers.put(counter.get(), newUser);
-        return counter.get();
+        return newUser;
     }
 
     @PutMapping("/api/users/{id}")
     public User updateUser(@PathVariable("id") long id, @RequestBody User updateUser) {
-        // Implement me
-        return new User(id, updateUser.getFirstname(), updateUser.getLastname());
+        return new User(id, updateUser.getFirstName(), updateUser.getLastName());
     }
 }
