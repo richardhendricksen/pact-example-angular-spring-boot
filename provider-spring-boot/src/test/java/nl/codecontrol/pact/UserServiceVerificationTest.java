@@ -30,7 +30,7 @@ class UserServiceVerificationTest {
         context.setTarget(new HttpTestTarget("localhost", 8080, "/"));
     }
 
-    @State({"provider accepts a new person", "person 42 exists"})
+    @State({"provider accepts a new person", "person 42 exists", "person 1 exists"})
     public void toDefaultState() {
     }
 
