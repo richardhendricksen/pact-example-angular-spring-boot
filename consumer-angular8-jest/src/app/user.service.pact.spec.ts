@@ -13,7 +13,7 @@ describe('UserServicePact', () => {
     dir: path.resolve(process.cwd(), '..', 'pacts'),
     spec: 3,
     logLevel: 'info',
-    consumer: 'ui',
+    consumer: 'ui-jest',
     provider: 'userservice'
   });
 
@@ -42,6 +42,36 @@ describe('UserServicePact', () => {
   // Verify test
   afterEach(async () => {
     await provider.verify();
+  });
+
+  describe('get()', () => {
+
+    const expectedUser: User = {
+      firstName: 'Zaphod',
+      lastName: 'Beeblebrox'
+    };
+
+    beforeAll(async () => {
+      await provider.addInteraction({
+        state: `person 1 exists`,
+        uponReceiving: 'a request to GET a person',
+        withRequest: {
+          method: 'GET',
+          path: '/api/users/1'
+        },
+        willRespondWith: {
+          status: 200,
+          body: Matchers.somethingLike(expectedUser)
+        }
+      });
+    });
+
+    it('should get a Person', async () => {
+      const userService: UserService = TestBed.get(UserService);
+
+      await userService.get(1).toPromise().then(user => {
+      });
+    });
   });
 
   describe('create()', () => {
@@ -114,36 +144,6 @@ describe('UserServicePact', () => {
       const userService: UserService = TestBed.get(UserService);
 
       await userService.update(expectedUser, 42).toPromise().then(response => {
-      });
-    });
-  });
-
-  describe('get()', () => {
-
-    const expectedUser: User = {
-      firstName: 'Zaphod',
-      lastName: 'Beeblebrox'
-    };
-
-    beforeAll(async () => {
-      await provider.addInteraction({
-        state: `person 1 exists`,
-        uponReceiving: 'a request to GET a person',
-        withRequest: {
-          method: 'GET',
-          path: '/api/users/1'
-        },
-        willRespondWith: {
-          status: 200,
-          body: Matchers.somethingLike(expectedUser)
-        }
-      });
-    });
-
-    it('should get a Person', async () => {
-      const userService: UserService = TestBed.get(UserService);
-
-      await userService.get(1).toPromise().then(user => {
       });
     });
   });

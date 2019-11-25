@@ -28,7 +28,6 @@
     "@angular/cli": "~8.3.19",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
-    "@nrwl/angular": "^8.8.2",
     "@nrwl/jest": "8.5.0",
     "@pact-foundation/pact": "^9.5.0",
     "@pact-foundation/pact-node": "^10.2.1",
