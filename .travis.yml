@@ -3,18 +3,22 @@ jobs:
   include:
     - stage: Consumer Angular 8 Jest Pact test
       language: node_js
+      node_js:
+        - 10
       before_install:
         - cd consumer-angular8-jest
-      install: npm ci
       script: npm run test
     - stage: Consumer Angular 8 Karma Pact test
       language: node_js
-      install: npm ci
+      node_js:
+        - 10
       before_install:
         - cd consumer-angular8-karma
       script: npm run test
     - stage: Provider Spring Boot Pact test
       language: java
+      java:
+        - 8
       before_install:
         - cd provider-spring-boot
       install: true
