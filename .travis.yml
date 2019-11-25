@@ -12,9 +12,11 @@ jobs:
       language: node_js
       node_js:
         - 10
+      addons:
+        chrome: stable
       before_install:
         - cd consumer-angular8-karma
-      script: npm run test
+      script: npm run test:ci
     - stage: Provider Spring Boot Pact test
       language: java
       java:
