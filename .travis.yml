@@ -1,0 +1,21 @@
+language: minimal
+jobs:
+  include:
+    - stage: Consumer Angular 8 Jest Pact test
+      language: node_js
+      before_install:
+        - cd consumer-angular8-jest
+      install: true
+      script: npm run test
+    - stage: Consumer Angular 8 Karma Pact test
+      language: node_js
+      before_install:
+        - cd consumer-angular8-karma
+      install: true
+      script: npm run test
+    - stage: Provider Spring Boot Pact test
+      language: java
+      before_install:
+        - cd provider-spring-boot
+      install: true
+      script: mvn clean verify
