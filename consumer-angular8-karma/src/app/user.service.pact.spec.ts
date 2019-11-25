@@ -12,7 +12,7 @@ describe('UserServicePact', () => {
   beforeAll(async () => {
 
     provider = await new PactWeb({
-      consumer: 'ui',
+      consumer: 'ui-karma',
       provider: 'userservice',
       port: 1234
     });
@@ -55,6 +55,36 @@ describe('UserServicePact', () => {
   // Create contract
   afterAll(async () => {
     await provider.finalize();
+  });
+
+  describe('get()', () => {
+
+    const expectedUser: User = {
+      firstName: 'Zaphod',
+      lastName: 'Beeblebrox'
+    };
+
+    beforeAll(async () => {
+      await provider.addInteraction({
+        state: `person 1 exists`,
+        uponReceiving: 'a request to GET a person',
+        withRequest: {
+          method: 'GET',
+          path: '/api/users/1'
+        },
+        willRespondWith: {
+          status: 200,
+          body: Matchers.somethingLike(expectedUser)
+        }
+      });
+    });
+
+    it('should get a Person', async () => {
+      const userService: UserService = TestBed.get(UserService);
+
+      await userService.get(1).toPromise().then(user => {
+      });
+    });
   });
 
   describe('create()', () => {
