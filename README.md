@@ -1,4 +1,4 @@
-# Pact Angular 8 Spring Boot Example
+# Pact Angular 8 Spring Boot Example [![Build Status](https://travis-ci.org/richardhendricksen/angular8-spring-boot-pact-example.svg?branch=master)](https://travis-ci.org/richardhendricksen/angular8-spring-boot-pact-example)
 
 This code provides examples how to setup contract testing using Angular 8 as a Consumer and Spring Boot as a Provider.
 
