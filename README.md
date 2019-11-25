@@ -1,8 +1,8 @@
-#Pact Angular 8 Spring Boot Example
+# Pact Angular 8 Spring Boot Example
 
 This code provides examples how to setup contract testing using Angular 8 as a Consumer and Spring Boot as a Provider.
 
-##Consumer
+## Consumer
 This repository contains 2 consumers, both are Angular 8 front-ends. Contracts are written to `pacts` root folder.
 The difference is the used framework to setup the Pact tests: Karma and Jest.
 
@@ -27,10 +27,10 @@ Run with `npm run test`/`yarn test`/`ng test`.
 Don't forget `"emitDecoratorMetadata": true` in the `tsconfig.json` file to prevent `Can't resolve all parameters for Component`.  
 See https://github.com/thymikee/jest-preset-angular/issues/288
 
-##Provider
+## Provider
 Provider is a Spring Boot backend server which provides the user endpoint.
 
-###Spring boot
+### Spring boot
 Run with `mvn clean verify`.
 
 #### Key files
