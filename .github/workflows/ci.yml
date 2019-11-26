@@ -14,11 +14,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         version: 10
+        
+    - name: Consumer Angular 8 Karma Pact test
+      run: |
+        cd consumers/angular8-karma
+        npm ci
+        npm run test
 
-    - name: Install
+    - name: Consumer Angular 8 Jest Pact test
       run: |
         cd consumers/angular8-jest
         npm ci
-        
-    - name: Consumer Angular 8 Karma Pact test
-      run: npm run test
+        npm run test
