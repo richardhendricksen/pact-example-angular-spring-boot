@@ -19,7 +19,7 @@ jobs:
       run: |
         cd consumers/angular8-karma
         npm ci
-        npm run test
+        npm run test:ci
 
     - name: Consumer Angular 8 Jest Pact test
       run: |
