@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use node.js 10
+      uses: actions/setup-node@v1
+      with:
+        version: 10
+
+    - name: install
+      run: |
+        npm ci
