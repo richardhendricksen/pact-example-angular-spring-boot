@@ -26,3 +26,8 @@ jobs:
         cd consumers/angular8-jest
         npm ci
         npm run test
+
+    - name: Provider Spring Boot Pact test
+      run: |
+        cd providers/spring-boot
+        mvn clean verify
