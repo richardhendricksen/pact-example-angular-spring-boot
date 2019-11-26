@@ -2,8 +2,8 @@
 
 This code provides examples how to setup contract testing using Angular 8 as a Consumer and Spring Boot as a Provider.
 
-## Consumer
-This repository contains 2 consumers, both are Angular 8 front-ends. Contracts are written to `pacts` root folder.
+## Consumers
+This repository contains 2 Consumers, both are Angular 8 front-ends. Contracts are written to `pacts` root folder.
 The difference is the used framework to setup the Pact tests: Karma and Jest.
 
 ### Karma
