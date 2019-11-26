@@ -5,11 +5,7 @@ module.exports = {
   },
   globals: {
     'ts-jest': {
-      tsConfig: '<rootDir>/tsconfig.spec.json',
-      astTransformers: [
-        'node_modules/jest-preset-angular/build/InlineFilesTransformer',
-        'node_modules/jest-preset-angular/build/StripStylesTransformer'
-      ]
+      tsConfig: '<rootDir>/tsconfig.spec.json'
     },
     stringifyContentPathRegex: true
   },

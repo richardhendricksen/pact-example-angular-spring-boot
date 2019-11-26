@@ -10,7 +10,7 @@ describe('UserServicePact', () => {
   const provider: Pact = new Pact({
     port: 1234,
     log: path.resolve(process.cwd(), 'pact', 'logs', 'mockserver-integration.log'),
-    dir: path.resolve(process.cwd(), '..', 'pacts'),
+    dir: path.resolve(process.cwd(), '..', '..', 'pacts'),
     spec: 3,
     logLevel: 'info',
     consumer: 'ui-jest',

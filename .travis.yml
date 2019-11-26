@@ -6,7 +6,7 @@ jobs:
       node_js:
         - 10
       before_install:
-        - cd consumer-angular8-jest
+        - cd consumers/angular8-jest
       script: npm run test
     - stage: Consumer Angular 8 Karma Pact test
       language: node_js
@@ -15,13 +15,13 @@ jobs:
       addons:
         chrome: stable
       before_install:
-        - cd consumer-angular8-karma
+        - cd consumers/angular8-karma
       script: npm run test:ci
     - stage: Provider Spring Boot Pact test
       language: java
       java:
         - 8
       before_install:
-        - cd provider-spring-boot
+        - cd providers/spring-boot
       install: true
       script: mvn clean verify

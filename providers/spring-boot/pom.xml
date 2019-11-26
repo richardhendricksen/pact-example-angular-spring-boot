@@ -76,7 +76,7 @@
 		</plugins>
         <testResources>
             <testResource>
-                <directory>../</directory>
+                <directory>../../</directory>
                 <includes>
                     <include>pacts/*.json</include>
                 </includes>
