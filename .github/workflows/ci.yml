@@ -30,4 +30,4 @@ jobs:
     - name: Provider Spring Boot Pact test
       run: |
         cd providers/spring-boot
-        mvn clean verify
+        mvn -B clean verify
