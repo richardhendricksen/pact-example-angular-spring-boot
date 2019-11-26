@@ -9,11 +9,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      
     - name: Use node.js 10
       uses: actions/setup-node@v1
       with:
         version: 10
 
-    - name: install
+    - name: Install
       run: |
+        cd consumers/angular8-jest
         npm ci
+        
+    - name: Consumer Angular 8 Karma Pact test
+      run: npm run test
