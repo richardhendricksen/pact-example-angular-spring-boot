@@ -20,3 +20,6 @@ target/
 
 ### Test
 logs
+
+### MacOS
+.DS_Store
