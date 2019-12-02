@@ -30,7 +30,6 @@
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@pact-foundation/karma-pact": "^2.2.0",
-    "@pact-foundation/pact": "^9.5.0",
     "@pact-foundation/pact-node": "^10.2.1",
     "@pact-foundation/pact-web": "^9.5.0",
     "@types/node": "~8.9.4",

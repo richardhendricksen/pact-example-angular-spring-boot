@@ -36,18 +36,7 @@ describe('UserServicePact', () => {
     });
   });
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        HttpClientModule
-      ],
-      providers: [
-        UserService
-      ],
-    });
-  });
-
-  // Verify test
+  // Verify mock service
   afterEach(async () => {
     await provider.verify();
   });
@@ -59,6 +48,8 @@ describe('UserServicePact', () => {
 
   describe('get()', () => {
 
+    const userId = 1;
+
     const expectedUser: User = {
       firstName: 'Zaphod',
       lastName: 'Beeblebrox'
@@ -66,11 +57,11 @@ describe('UserServicePact', () => {
 
     beforeAll(async () => {
       await provider.addInteraction({
-        state: `person 1 exists`,
-        uponReceiving: 'a request to GET a person',
+        state: `user 1 exists`,
+        uponReceiving: 'a request to GET a user',
         withRequest: {
           method: 'GET',
-          path: '/api/users/1'
+          path: `/api/users/${userId}`
         },
         willRespondWith: {
           status: 200,
@@ -79,10 +70,11 @@ describe('UserServicePact', () => {
       });
     });
 
-    it('should get a Person', async () => {
+    it('should get a user', async () => {
       const userService: UserService = TestBed.get(UserService);
 
-      await userService.get(1).toPromise().then(user => {
+      await userService.get(userId).toPromise().then(response => {
+        expect(response).toEqual(expectedUser);
       });
     });
   });
@@ -98,8 +90,8 @@ describe('UserServicePact', () => {
 
     beforeAll(async () => {
       await provider.addInteraction({
-        state: `provider accepts a new person`,
-        uponReceiving: 'a request to POST a person',
+        state: `provider accepts a new user`,
+        uponReceiving: 'a request to POST a user',
         withRequest: {
           method: 'POST',
           path: '/api/users',
@@ -120,7 +112,7 @@ describe('UserServicePact', () => {
       });
     });
 
-    it('should create a Person', async () => {
+    it('should create a user', async () => {
       const userService: UserService = TestBed.get(UserService);
       await userService.create(expectedUser).toPromise().then(response => {
         expect(response).toEqual(createdUserId);
@@ -138,8 +130,8 @@ describe('UserServicePact', () => {
 
     beforeAll(async () => {
       await provider.addInteraction({
-        state: `person 42 exists`,
-        uponReceiving: 'a request to PUT a person',
+        state: `users 42 exists`,
+        uponReceiving: 'a request to PUT a user',
         withRequest: {
           method: 'PUT',
           path: '/api/users/42',
@@ -153,10 +145,11 @@ describe('UserServicePact', () => {
       });
     });
 
-    it('should update a Person', async () => {
+    it('should update a user', async () => {
       const userService: UserService = TestBed.get(UserService);
 
       await userService.update(expectedUser, 42).toPromise().then(response => {
+        expect(response).toEqual(expectedUser);
       });
     });
   });

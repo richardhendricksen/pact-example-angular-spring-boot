@@ -7,8 +7,8 @@
   },
   "interactions": [
     {
-      "description": "a request to PUT a person",
-      "providerState": "person 42 exists",
+      "description": "a request to PUT a user",
+      "providerState": "users 42 exists",
       "request": {
         "method": "PUT",
         "path": "/api/users/42",
@@ -42,8 +42,8 @@
       "metadata": null
     },
     {
-      "description": "a request to GET a person",
-      "providerState": "person 1 exists",
+      "description": "a request to GET a user",
+      "providerState": "user 1 exists",
       "request": {
         "method": "GET",
         "path": "/api/users/1"
@@ -65,8 +65,8 @@
       "metadata": null
     },
     {
-      "description": "a request to POST a person",
-      "providerState": "provider accepts a new person",
+      "description": "a request to POST a user",
+      "providerState": "provider accepts a new user",
       "request": {
         "method": "POST",
         "path": "/api/users",
