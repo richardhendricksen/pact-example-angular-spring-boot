@@ -78,9 +78,9 @@
           }
         },
         "test": {
-          "builder": "@nrwl/jest:jest",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "jestConfig": "jest.pact.config.js",
+            "configPath": "jest.pact.config.js",
             "tsConfig": "tsconfig.spec.json",
             "runInBand": true
           }
