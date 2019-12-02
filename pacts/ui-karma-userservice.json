@@ -7,8 +7,38 @@
   },
   "interactions": [
     {
+      "description": "a request to POST a user",
+      "providerState": "provider accepts a new user",
+      "request": {
+        "method": "POST",
+        "path": "/api/users",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "firstName": "Arthur",
+          "lastName": "Dent"
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 42
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      },
+      "metadata": null
+    },
+    {
       "description": "a request to PUT a user",
-      "providerState": "users 42 exists",
+      "providerState": "user 42 exists",
       "request": {
         "method": "PUT",
         "path": "/api/users/42",
@@ -55,36 +85,6 @@
         "body": {
           "firstName": "Zaphod",
           "lastName": "Beeblebrox"
-        },
-        "matchingRules": {
-          "$.body": {
-            "match": "type"
-          }
-        }
-      },
-      "metadata": null
-    },
-    {
-      "description": "a request to POST a user",
-      "providerState": "provider accepts a new user",
-      "request": {
-        "method": "POST",
-        "path": "/api/users",
-        "headers": {
-          "Content-Type": "application/json"
-        },
-        "body": {
-          "firstName": "Arthur",
-          "lastName": "Dent"
-        }
-      },
-      "response": {
-        "status": 201,
-        "headers": {
-          "Content-Type": "application/json"
-        },
-        "body": {
-          "id": 42
         },
         "matchingRules": {
           "$.body": {

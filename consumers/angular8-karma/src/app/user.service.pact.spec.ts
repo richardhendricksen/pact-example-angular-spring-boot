@@ -130,7 +130,7 @@ describe('UserServicePact', () => {
 
     beforeAll(async () => {
       await provider.addInteraction({
-        state: `users 42 exists`,
+        state: `user 42 exists`,
         uponReceiving: 'a request to PUT a user',
         withRequest: {
           method: 'PUT',
