@@ -22,11 +22,6 @@ describe('UserServicePact', () => {
     await provider.setup();
   });
 
-  // Create contract
-  afterAll(async () => {
-    await provider.finalize();
-  });
-
   // Configure Angular Testbed for this service
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -39,9 +34,14 @@ describe('UserServicePact', () => {
     });
   });
 
-  // Verify test
+  // Verify mock service
   afterEach(async () => {
     await provider.verify();
+  });
+
+  // Create contract
+  afterAll(async () => {
+    await provider.finalize();
   });
 
   describe('get()', () => {
@@ -72,7 +72,7 @@ describe('UserServicePact', () => {
       const userService: UserService = TestBed.get(UserService);
 
       await userService.get(userId).toPromise().then(response => {
-        expect(response).toEqual(expectedUser)
+        expect(response).toEqual(expectedUser);
       });
     });
   });
