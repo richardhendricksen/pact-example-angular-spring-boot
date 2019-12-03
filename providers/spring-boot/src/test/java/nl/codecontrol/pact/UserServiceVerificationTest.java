@@ -20,7 +20,7 @@ class UserServiceVerificationTest {
     private static ConfigurableWebApplicationContext application;
 
     @BeforeAll
-    public static void start() {
+    static void start() {
         application = (ConfigurableWebApplicationContext)
                 SpringApplication.run(SpringBootProviderApplication.class);
     }
@@ -31,8 +31,7 @@ class UserServiceVerificationTest {
     }
 
     @State({"provider accepts a new user", "user 42 exists", "user 1 exists"})
-    public void toDefaultState() {
-    }
+    void toDefaultState() { }
 
     @TestTemplate
     @ExtendWith(PactVerificationInvocationContextProvider.class)
