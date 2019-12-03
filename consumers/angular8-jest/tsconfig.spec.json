@@ -2,6 +2,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "noUnusedLocals": false,
-    "types": ["jasmine", "node"]
+    "types": [
+      "jasmine",
+      "node"
+    ],
+    // fixes issue with jest
+    // https://github.com/thymikee/jest-preset-angular/issues/288
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   }
 }
