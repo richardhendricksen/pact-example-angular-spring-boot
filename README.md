@@ -1,6 +1,7 @@
 # Pact Angular 8 Spring Boot Example [![Build Status](https://github.com/richardhendricksen/pact-example-angular8-spring-boot/workflows/CI/badge.svg)](https://github.com/richardhendricksen/pact-example-angular8-spring-boot/actions?query=workflow%3ACI)
 
 This code provides examples how to setup contract testing using Angular 8 as a Consumer and Spring Boot as a Provider.
+Read more about it in my blog post [here](https://medium.com/@richard.hendricksen/consumer-driven-contract-testing-with-pact-for-angular-and-spring-boot-9c84caac4040).
 
 ## Consumers
 This repository contains 2 Consumers, both are Angular 8 front-ends. Contracts are written to `pacts` root folder.
