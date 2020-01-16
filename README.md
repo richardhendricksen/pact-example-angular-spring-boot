@@ -12,7 +12,7 @@ Run with `npm run test`/`yarn test`/`ng test`.
 
 #### Key files
 - `src/app/user.service.ts`: Angular service that calls REST backend to manage users
-- `user.serivce.pact.spec.ts`: Karma/Jasmine consumer Pact test for user service
+- `user.service.pact.spec.ts`: Karma/Jasmine consumer Pact test for user service
 - `karma.conf.js`: Karma configuration for consumer Pact tests
 
 ### Jest
@@ -20,7 +20,7 @@ Run with `npm run test`/`yarn test`/`ng test`.
 
 #### Key files
 - `src/app/user.service.ts`: Angular service that calls REST backend to manage users
-- `user.serivce.pact.spec.ts`: Karma/Jasmine consumer Pact test for user service
+- `user.service.pact.spec.ts`: Karma/Jasmine consumer Pact test for user service
 - `jest.pact.config`: Jest configuration for consumer Pact tests
 - `pact/jest/setupJest.ts`: Jest setup file to setup Pact
 
