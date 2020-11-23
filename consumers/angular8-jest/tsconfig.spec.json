@@ -3,12 +3,11 @@
   "compilerOptions": {
     "noUnusedLocals": false,
     "types": [
-      "jasmine",
+      "jest",
       "node"
     ],
-    // fixes issue with jest
-    // https://github.com/thymikee/jest-preset-angular/issues/288
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "esModuleInterop": true
   }
 }

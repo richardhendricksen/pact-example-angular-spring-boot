@@ -1,3 +1,3 @@
 import 'jest-preset-angular';
+jest.setTimeout(30000);
 
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
