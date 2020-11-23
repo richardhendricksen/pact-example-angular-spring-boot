@@ -13,7 +13,7 @@ jobs:
     - name: Use node.js 10
       uses: actions/setup-node@v1
       with:
-        version: 10
+        node-version: 10
         
     - name: Consumer Angular Karma Pact test
       run: |
