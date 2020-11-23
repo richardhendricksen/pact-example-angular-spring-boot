@@ -26,7 +26,8 @@
             "match": "type"
           }
         }
-      }
+      },
+      "metadata": null
     },
     {
       "description": "a request to POST a user",
@@ -55,7 +56,8 @@
             "match": "type"
           }
         }
-      }
+      },
+      "metadata": null
     },
     {
       "description": "a request to PUT a user",
@@ -89,7 +91,8 @@
             "match": "type"
           }
         }
-      }
+      },
+      "metadata": null
     }
   ],
   "metadata": {
