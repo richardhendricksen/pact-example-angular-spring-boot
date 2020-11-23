@@ -17,7 +17,7 @@ Run with `npm run test`/`yarn test`/`ng test`.
 - `karma.conf.js`: Karma configuration for consumer Pact tests
 
 ### Jest
-Updated to Angular 11.
+Updated to Angular 10.
 Run with `npm run test`/`yarn test`/`ng test`.
 
 #### Key files
