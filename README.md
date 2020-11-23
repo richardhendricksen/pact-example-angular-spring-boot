@@ -1,13 +1,14 @@
-# Pact Angular 8 Spring Boot Example [![Build Status](https://github.com/richardhendricksen/pact-example-angular8-spring-boot/workflows/CI/badge.svg)](https://github.com/richardhendricksen/pact-example-angular8-spring-boot/actions?query=workflow%3ACI)
+# Pact Angular Spring Boot Example [![Build Status](https://github.com/richardhendricksen/pact-example-angular8-spring-boot/workflows/CI/badge.svg)](https://github.com/richardhendricksen/pact-example-angular8-spring-boot/actions?query=workflow%3ACI)
 
-This code provides examples how to setup contract testing using Angular 8 as a Consumer and Spring Boot as a Provider.
+This code provides examples how to setup contract testing using Angular as a Consumer and Spring Boot as a Provider.
 Read more about it in my blog post [here](https://medium.com/@richard.hendricksen/consumer-driven-contract-testing-with-pact-for-angular-and-spring-boot-9c84caac4040).
 
 ## Consumers
-This repository contains 2 Consumers, both are Angular 8 front-ends. Contracts are written to `pacts` root folder.
+This repository contains 2 Consumers, both are Angular front-ends. Contracts are written to `pacts` root folder.
 The difference is the used framework to setup the Pact tests: Karma and Jest.
 
 ### Karma
+Currently on Angular 8.
 Run with `npm run test`/`yarn test`/`ng test`.
 
 #### Key files
@@ -16,6 +17,7 @@ Run with `npm run test`/`yarn test`/`ng test`.
 - `karma.conf.js`: Karma configuration for consumer Pact tests
 
 ### Jest
+Updated to Angular 11.
 Run with `npm run test`/`yarn test`/`ng test`.
 
 #### Key files

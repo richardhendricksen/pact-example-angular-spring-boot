@@ -15,15 +15,15 @@ jobs:
       with:
         version: 10
         
-    - name: Consumer Angular 8 Karma Pact test
+    - name: Consumer Angular Karma Pact test
       run: |
-        cd consumers/angular8-karma
+        cd consumers/angular-karma
         npm ci
         npm run test:ci
 
-    - name: Consumer Angular 8 Jest Pact test
+    - name: Consumer Angular Jest Pact test
       run: |
-        cd consumers/angular8-jest
+        cd consumers/angular-jest
         npm ci
         npm run test
 
